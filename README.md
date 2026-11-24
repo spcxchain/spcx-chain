@@ -4,6 +4,16 @@ Run an independent SPCX mainnet watchtower or use the same CLI to monitor a node
 
 [Validator portal](https://validator.spcxchain.network/) · [Enrollment status](https://validator.spcxchain.network/status.json) · [Explorer](https://explorer.spcxchain.network/) · [Docs](https://docs.spcxchain.network/)
 
+## Project token ($SPCXC)
+
+**Contract address on Robinhood Chain mainnet (chain ID 4663)**
+
+`0x904CcDCee00a4f4596B1e92604C00274B75CB244`
+
+$SPCXC is the project token used in the community validator program design. SPCX is the native gas currency on SPCX Chain (chain ID 46630022). Running a watchtower requires no token deposit.
+
+[View contract on the Robinhood explorer](https://robinhoodchain.blockscout.com/address/0x904CcDCee00a4f4596B1e92604C00274B75CB244) · [View $SPCXC on Pons](https://ponsfamily.com/launchpad/0x904ccdcee00a4f4596b1e92604c00274b75cb244)
+
 ## Install
 
 Install Git, Python 3.10+ and Node.js 22+. The installer builds an executable from this checkout using Python's standard library. It runs as your own user and works offline after cloning.
