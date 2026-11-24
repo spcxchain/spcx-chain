@@ -61,4 +61,4 @@ node --test validator/lab/plans.test.cjs
 spcx-validator rehearse
 ```
 
-The operator sources come from the portal's v0.1.1 kit (SHA-256 `ee1c3636aaf85adde10d1b71eddb58c702436d5a3b65d93d96ee507807c83d44`). This distribution builds its own executable and exposes the operator commands. The portal deployment command belongs to the separate website distribution. The bundled ethers dependency carries its [MIT notice](validator/Ethers-LICENSE.md).
+The operator sources come from the portal's v0.1.1 kit (SHA-256 `930ffc4bc90c0c6b227d47b356d7bc14dd0ccef1c04ac98861272c67e1b52d96`). This distribution builds its own executable and exposes the operator commands. The portal deployment command belongs to the separate website distribution. The bundled ethers dependency carries its [MIT notice](validator/Ethers-LICENSE.md).
