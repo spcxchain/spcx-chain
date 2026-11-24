@@ -1,0 +1,48 @@
+[
+  {
+    "chain-name": "SPCX Chain Mainnet",
+    "parent-chain-id": 4663,
+    "parent-chain-is-arbitrum": true,
+    "has-genesis-state": false,
+    "chain-config": {
+      "chainId": 46630022,
+      "homesteadBlock": 0,
+      "daoForkBlock": null,
+      "daoForkSupport": true,
+      "eip150Block": 0,
+      "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "eip155Block": 0,
+      "eip158Block": 0,
+      "byzantiumBlock": 0,
+      "constantinopleBlock": 0,
+      "petersburgBlock": 0,
+      "istanbulBlock": 0,
+      "muirGlacierBlock": 0,
+      "berlinBlock": 0,
+      "londonBlock": 0,
+      "clique": {
+        "period": 0,
+        "epoch": 0
+      },
+      "arbitrum": {
+        "EnableArbOS": true,
+        "AllowDebugPrecompiles": false,
+        "DataAvailabilityCommittee": false,
+        "InitialArbOSVersion": 32,
+        "InitialChainOwner": "0x044b4815cf81dbe586e91b1243b597aaf8b75dae",
+        "GenesisBlockNum": 0
+      }
+    },
+    "rollup": {
+      "bridge": "0x6a061d1055a18db221ea86fb652f0ec43f7435af",
+      "inbox": "0xfa45d1b34063594263370b29a1503471537f06c0",
+      "sequencer-inbox": "0x271760b6feb1d3e6fd14167a271f017b040d9a4b",
+      "rollup": "0xefa37e7de06e8efe4fb5d7e19812c1ad09da888d",
+      "native-token": "0x4a0e65a3eccec6dbe60ae065f2e7bb85fae35eea",
+      "upgrade-executor": "0x24f0dcaa205822fea4c1ba498eded8cb9147f7dc",
+      "validator-wallet-creator": "0xb7fe37712e46f28c8f22ec4baa33a09fb8b52bd0",
+      "stake-token": "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+      "deployed-at": 121350260
+    }
+  }
+]

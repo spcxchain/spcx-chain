@@ -1,0 +1,163 @@
+{
+  "chain": {
+    "id": 46630022,
+    "info-files": [
+      "/spcx-config/chain-info.json"
+    ]
+  },
+  "parent-chain": {
+    "id": 4663,
+    "connection": {
+      "url": "https://archive.example.invalid",
+      "timeout": "30s",
+      "retries": 5
+    }
+  },
+  "persistent": {
+    "global-config": "/home/user/.arbitrum",
+    "chain": "SPCX Chain Mainnet",
+    "db-engine": "pebble"
+  },
+  "http": {
+    "addr": "0.0.0.0",
+    "port": 8547,
+    "api": [
+      "net",
+      "web3",
+      "eth",
+      "arb"
+    ],
+    "vhosts": [
+      "localhost",
+      "127.0.0.1"
+    ]
+  },
+  "ws": {
+    "addr": ""
+  },
+  "init": {
+    "empty": true,
+    "validate-genesis-assertion": true
+  },
+  "ensure-rollup-deployment": true,
+  "node": {
+    "sequencer": false,
+    "parent-chain-reader": {
+      "enable": true,
+      "poll-only": true,
+      "poll-interval": "5s",
+      "poll-timeout": "20s",
+      "use-finality-data": true
+    },
+    "inbox-reader": {
+      "read-mode": "latest",
+      "default-blocks-to-read": 100,
+      "max-blocks-to-read": 1000,
+      "check-delay": "15s"
+    },
+    "delayed-sequencer": {
+      "enable": false,
+      "require-full-finality": true,
+      "use-merge-finality": true,
+      "rescan-interval": "15s"
+    },
+    "batch-poster": {
+      "enable": false,
+      "max-delay": "5m",
+      "max-empty-batch-delay": "0s",
+      "poll-interval": "15s",
+      "l1-block-bound": "latest",
+      "l1-block-bound-bypass": "0s",
+      "post-4844-blobs": false,
+      "use-access-lists": false,
+      "check-batch-correctness": true,
+      "data-poster": {
+        "max-mempool-transactions": 1,
+        "max-mempool-weight": 1,
+        "target-price-gwei": 0.1,
+        "min-tip-cap-gwei": 0.001,
+        "max-tip-cap-gwei": 0.01,
+        "max-fee-bid-multiple-bips": 30000,
+        "max-fee-cap-formula": "TargetPriceGWei",
+        "wait-for-l1-finality": true,
+        "allocate-mempool-balance": true
+      }
+    },
+    "staker": {
+      "enable": true,
+      "strategy": "Watchtower",
+      "use-smart-contract-wallet": false,
+      "disable-challenge": false,
+      "start-validation-from-staked": false,
+      "enable-fast-confirmation": false,
+      "data-poster": {
+        "max-mempool-transactions": 1,
+        "max-mempool-weight": 1,
+        "target-price-gwei": 0.1,
+        "min-tip-cap-gwei": 0.001,
+        "max-tip-cap-gwei": 0.01,
+        "max-fee-bid-multiple-bips": 30000,
+        "max-fee-cap-formula": "TargetPriceGWei",
+        "wait-for-l1-finality": true,
+        "allocate-mempool-balance": true
+      },
+      "log-query-batch-size": 1000
+    },
+    "bold": {
+      "rpc-block-number": "finalized",
+      "max-get-log-blocks": 1000,
+      "assertion-posting-interval": "15m",
+      "start-validation-from-staked": false,
+      "auto-deposit": false,
+      "auto-increase-allowance": false,
+      "enable-fast-confirmation": false,
+      "state-provider-config": {
+        "check-batch-finality": true
+      }
+    },
+    "block-validator": {
+      "enable": true,
+      "current-module-root": "current",
+      "pending-upgrade-module-root": ""
+    },
+    "feed": {
+      "output": {
+        "enable": false,
+        "signed": false
+      }
+    },
+    "seq-coordinator": {
+      "enable": false
+    },
+    "dangerous": {
+      "no-sequencer-coordinator": false
+    }
+  },
+  "execution": {
+    "forwarding-target": "null",
+    "sequencer": {
+      "enable": false,
+      "expected-surplus-gas-price-mode": "CalldataPrice"
+    },
+    "parent-chain-reader": {
+      "enable": true,
+      "poll-only": true,
+      "poll-interval": "5s",
+      "poll-timeout": "20s",
+      "use-finality-data": true
+    },
+    "caching": {
+      "state-scheme": "hash"
+    }
+  },
+  "validation": {
+    "wasm": {
+      "root-path": "/home/user/nitro-legacy/machines",
+      "enable-wasmroots-check": true
+    },
+    "jit": {
+      "workers": 2
+    },
+    "api-public": false
+  }
+}
