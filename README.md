@@ -2,7 +2,7 @@
 
 Run an independent SPCX mainnet watchtower or use the same CLI to monitor a node from a software agent. SPCX is an EVM L3 on Robinhood Chain. Public watchtowers can follow and validate the chain today. Signing assertions and earning community rewards require a separate enrollment. The portal publishes the current enrollment status.
 
-[Validator portal](https://validator.spcxchain.network/) · [Enrollment status](https://validator.spcxchain.network/status.json) · [Explorer](https://explorer.spcxchain.network/) · [Docs](https://docs.spcxchain.network/)
+[Run a node](https://mainnet.spcxchain.network/run-a-node/) · [Staking](https://mainnet.spcxchain.network/staking/) · [Explorer](https://explorer.spcxchain.network/) · [Docs](https://docs.spcxchain.network/)
 
 ## Blockscout explorer
 
@@ -18,16 +18,22 @@ The explorer follows parent-published batches. Its indexed head can trail the se
 
 `0x904CcDCee00a4f4596B1e92604C00274B75CB244`
 
-$SPCXC is the project token used in the community validator program design. SPCX is the native gas currency on SPCX Chain (chain ID 46630022). Running a watchtower requires no token deposit.
+$SPCXC is used by the live community staking contract on Robinhood: a minimum position of 1,000 SPCXC, with withdrawals after a 24-hour lock from the latest stake. SPCX is the native gas currency on SPCX Chain (chain ID 46630022). Running a watchtower requires no token deposit.
 
 [View contract on the Robinhood explorer](https://robinhoodchain.blockscout.com/address/0x904CcDCee00a4f4596B1e92604C00274B75CB244) · [View $SPCXC on Pons](https://ponsfamily.com/launchpad/0x904ccdcee00a4f4596b1e92604c00274b75cb244)
+
+## Live community staking
+
+The [staking source and ABI](staking/README.md) document the deployed 1,000 SPCXC / 24-hour program. A mature stake is required for community validator admission; node readiness, rollup permission and the protocol WETH bond remain separate. Rewards depend on confirmed assertion work and a separately funded daily SPCXC pool. There is no fixed APY.
+
+[Release and evidence](releases/2026-11-27-spcxc-staking.md) · [Current validator guide](validator/README.md)
 
 ## Install
 
 Install Git, Python 3.10+ and Node.js 22+. The installer builds an executable from this checkout using Python's standard library. It runs as your own user and works offline after cloning.
 
 ```sh
-git clone --branch validators-v0.1.1 --depth 1 https://github.com/spcxchain/spcx-chain.git
+git clone --branch main --depth 1 https://github.com/spcxchain/spcx-chain.git
 cd spcx-chain
 python3 install.py
 export PATH="$HOME/.local/bin:$PATH"
@@ -68,7 +74,7 @@ spcx-validator agent "$OPERATOR" --once
 spcx-validator agent "$OPERATOR" --interval 60
 ```
 
-For alert handling and output fields see [AGENTS.md](AGENTS.md). For the protocol bond, pilot stake terms and unsigned planning commands see the [operator guide](validator/README.md).
+For alert handling and output fields see [AGENTS.md](AGENTS.md). For the protocol bond and deployed staking terms see the [operator guide](validator/README.md). The existing CLI seat planners describe a historical dual-vault proposal and do not operate the live SPCXC staking contract.
 
 ## Verify the kit
 
@@ -79,4 +85,4 @@ node --test validator/lab/plans.test.cjs
 spcx-validator rehearse
 ```
 
-The operator sources come from the portal's v0.1.1 kit (SHA-256 `930ffc4bc90c0c6b227d47b356d7bc14dd0ccef1c04ac98861272c67e1b52d96`). This distribution builds its own executable and exposes the operator commands. The portal deployment command belongs to the separate website distribution. The bundled ethers dependency carries its [MIT notice](validator/Ethers-LICENSE.md).
+The operator sources come from the portal's v0.1.1 kit (SHA-256 `930ffc4bc90c0c6b227d47b356d7bc14dd0ccef1c04ac98861272c67e1b52d96`). This distribution builds its own executable and exposes the operator commands. This staking source release retains the v0.1.1 watchtower CLI unchanged. Its historical staking planners do not target the deployed contract under `staking/`. The portal deployment command belongs to the separate website distribution. The bundled ethers dependency carries its [MIT notice](validator/Ethers-LICENSE.md).

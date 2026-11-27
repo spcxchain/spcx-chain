@@ -4,7 +4,8 @@ Use the installed `spcx-validator` executable or `python3 validator` from this c
 
 - SPCX child chain ID is 46630022. Genesis is `0xa33c011eec2550e73849e2a882d754e4b23a53568475511726ecc69619077a3b`.
 - Robinhood parent chain ID is 4663. The operator supplies a private archive endpoint to the watchtower during initialization.
-- Read the public enrollment state from [the validator portal](https://validator.spcxchain.network/status.json).
+- Read current community staking terms from [the staking API](https://mainnet.spcxchain.network/staking-api/config). Staking and network authorization are separate.
+- The v0.1.1 CLI `seat` fields and planners refer to a historical dual-vault proposal. Use [the deployed staking guide](staking/README.md) for the live 1,000 SPCXC / 24-hour contract.
 
 ## Health probe
 
