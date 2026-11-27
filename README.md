@@ -4,6 +4,14 @@ Run an independent SPCX mainnet watchtower or use the same CLI to monitor a node
 
 [Validator portal](https://validator.spcxchain.network/) · [Enrollment status](https://validator.spcxchain.network/status.json) · [Explorer](https://explorer.spcxchain.network/) · [Docs](https://docs.spcxchain.network/)
 
+## Blockscout explorer
+
+The [public SPCX explorer](https://explorer.spcxchain.network/) is powered by Blockscout and backed by a dedicated Nitro archive node. Inspect blocks, transactions, addresses and token transfers on SPCX mainnet (chain ID 46630022).
+
+[Deployment notes and evidence](releases/2026-11-26-blockscout-explorer.md) · [Live explorer status](https://explorer.spcxchain.network/__spcx_explorer)
+
+The explorer follows parent-published batches. Its indexed head can trail the sequencer RPC; transaction inclusion shown here does not establish parent settlement or withdrawal payout.
+
 ## Project token ($SPCXC)
 
 **Contract address on Robinhood Chain mainnet (chain ID 4663)**

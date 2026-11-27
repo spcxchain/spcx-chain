@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "component": "SPCX public Blockscout explorer",
+  "deploymentDateUTC": "2026-11-26",
+  "verifiedAt": "2026-11-27T08:34:19.159490+00:00",
+  "chain": {
+    "childChainId": 46630022,
+    "parentChainId": 4663,
+    "nativeGas": "SPCX"
+  },
+  "explorer": "https://explorer.spcxchain.network/",
+  "deploymentStatus": {
+    "url": "https://explorer.spcxchain.network/__spcx_explorer",
+    "response": {
+      "service": "spcx-blockscout-public",
+      "build": "spcx-blockscout-public-v1.0.0-085f300b44da",
+      "checkedAt": 1795768297,
+      "phase": "https",
+      "status": "online",
+      "archiveHead": 57,
+      "referenceHead": 59,
+      "referenceLagBlocks": 2,
+      "parentTrackingEnabled": false,
+      "receiptLevel": "child inclusion; parent finality is not tracked"
+    }
+  },
+  "indexedBlock": {
+    "url": "https://explorer.spcxchain.network/api/v2/blocks/57",
+    "response": {
+      "height": 57,
+      "hash": "0x2940a6c828fc446de711451c275fd8dd82a0a8e7c1a220fd36ecb7f0ef98d369",
+      "timestamp": "2026-11-26T13:42:44.000000Z",
+      "transactions_count": 2
+    }
+  },
+  "indexedTransaction": {
+    "url": "https://explorer.spcxchain.network/api/v2/transactions/0xb08973cf1b98607bbfb71064bf1cab59747319d9a3094fc3fa772184ed4dfad7",
+    "response": {
+      "hash": "0xb08973cf1b98607bbfb71064bf1cab59747319d9a3094fc3fa772184ed4dfad7",
+      "block_number": 57,
+      "status": "ok",
+      "result": "success",
+      "timestamp": "2026-11-26T13:42:44.000000Z"
+    }
+  },
+  "referenceBlock": {
+    "url": "https://rpc.spcxchain.network/",
+    "method": "eth_getBlockByNumber",
+    "params": [
+      "0x39",
+      false
+    ],
+    "response": {
+      "number": "0x39",
+      "hash": "0x2940a6c828fc446de711451c275fd8dd82a0a8e7c1a220fd36ecb7f0ef98d369",
+      "timestamp": "0x6b083754"
+    }
+  },
+  "checks": {
+    "httpsPublicStatusOnline": true,
+    "indexedBlockHashMatchesReferenceRPC": true,
+    "indexedTransactionSucceeded": true
+  },
+  "scope": "Public explorer deployment and child inclusion. Parent settlement tracking is disabled; no withdrawal payout, source verification or audit is claimed."
+}
